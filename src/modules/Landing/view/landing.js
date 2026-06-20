@@ -1,7 +1,8 @@
 "use client";
-import useLanding from "../hooks/useLanding";
+import useLanding from "../Hooks/useLanding";
 
-export default function Landing({ navegarAlLogin }) {
+export default function Landing() {
+    const {navegarAlLogin} = useLanding(); 
     return (
         <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
 

@@ -1,6 +1,6 @@
 "use client"; 
 
-import Landing from "../app/login/view/landing";
+import Landing from "../modules/Landing/view/landing";
 
 export default function LoginPage() {
   return (
