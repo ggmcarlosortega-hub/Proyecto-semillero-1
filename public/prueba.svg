@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <rect width="800" height="400" rx="16" fill="#e5e7eb" />
+  
+  <circle cx="550" cy="120" r="50" fill="#d1d5db" />
+  
+  <path d="M400 400 L550 180 L750 400 Z" fill="#9ca3af" />
+  
+  <path d="M150 400 L350 120 L550 400 Z" fill="#6b7280" />
+  
+  <rect x="0" y="320" width="800" height="80" rx="16" fill="#ffffff" fill-opacity="0.8" />
+  
+  <text x="400" y="368" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#374151" text-anchor="middle">
+    IMAGEN DE PRUEBA (800x400)
+  </text>
+</svg>
