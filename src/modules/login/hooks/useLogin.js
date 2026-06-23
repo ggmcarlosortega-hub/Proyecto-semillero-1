@@ -13,7 +13,6 @@ export function useLogin() {
         localStorage.setItem("contra",data.contrasena);
         sessionStorage.setItem("email",data.correo);
         sessionStorage.setItem("contra",data.contrasena);
-        cookieStore.set()
         // router.push("/");
     };
 
