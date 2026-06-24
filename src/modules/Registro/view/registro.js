@@ -1,12 +1,26 @@
 "use client";
-
 import Image from "next/image";
 import { useRegistro } from "../Hooks/useRegistro";
 
 
 export default function Registro() {
-    const { register, handleSubmit, onSubmit} = useRegistro(); 
-    
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
+ 
+    const {cambiarPag} = useRegistro(); 
+
+    const onSubmit = (data) => console.log(data)
+
+
+    console.log(watch("nombre")) // watch input value by passing the name of it
+    console.log(watch("correo")) // watch input value by passing the name of it
+    console.log(watch("password")) // watch input value by passing the name of it
+
+
     return (
         <div className="w-full h-screen flex flex-row justify-center items-center">
             <div className="w-[1080] h-150 flex flex-row justify-center items-center">
@@ -36,7 +50,10 @@ export default function Registro() {
                             <input {...register("passwordRequerido", { required: true })} type="password" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" /> 
                         </div>
 
-                        <input type="submit" className="w-64 h-12 border-2 rounded-3xl bg-blue-700 text-white" />
+                        {(errors.nombreRequerido || errors.correoRequerido || errors.passwordRequerido) && <span className=" w-62 h-15 flex justify-center items-center">Todos los campos son requerido para su registro</span>}
+
+
+                        <input type="submit" onClick={cambiarPag} className="w-64 h-12 border-2 rounded-3xl bg-blue-700 text-white" />
                     </form>
 
                     <div>

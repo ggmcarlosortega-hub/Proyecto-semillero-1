@@ -4,30 +4,29 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export function useRegistro() {
-    const router = useRouter();
-    const [usuarios, setUsuarios] = useState([]);
+    const {
+        register,
+        handleSubmit,
+    } = useForm();
 
     const onSubmit = (data) => {
         const lista = {
             nombre: data.nombreRequerido,
             email: data.correoRequerido,
-            contrasena: data.passwordRequerido
-        }
-        const listaActualizada = [...usuarios, lista];
-        
-        setUsuarios(listaActualizada);
-        localStorage.setItem('usuarios', JSON.stringify(listaActualizada));
-        
-        console.log("Lista:", listaActualizada);
+            password: data.passwordRequerido
+        };
 
-        router.push("/login")
+        localStorage.setItem("user3", JSON.stringify(lista));
+        router.push("/login");
+        console.log("Lista ", lista)
     }
 
-    const {
-            register,
-            handleSubmit
-    } = useForm()
+    const router = useRouter();
 
+    const cambiarPag = () => {
+            console.log("Acceso valido")
+            router.push("/login");
+    };
     return {
         register,
         handleSubmit,
