@@ -16,7 +16,7 @@ export default function LoginForm() {
                             type="email"
                             placeholder="tu@correo.com"
                             className="w-full rounded-lg border border-gray-300 p-2.5 text-sm outline-none focus:border-blue-500"
-                            {...register("email")}
+                            {...register("correo")}
                         />
                     </div>
                     <div>
@@ -25,7 +25,7 @@ export default function LoginForm() {
                             type="password"
                             placeholder="••••••••"
                             className="w-full rounded-lg border border-gray-300 p-2.5 text-sm outline-none focus:border-blue-500"
-                            {...register("password")}
+                            {...register("contrasena")}
                         />
                     </div>
 
