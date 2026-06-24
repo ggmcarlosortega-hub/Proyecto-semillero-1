@@ -5,7 +5,8 @@ export default function useLanding() {
     const router = useRouter();
 
     const navegarAlLogin = () => {
-        router.push("/login");
+        console.log("Ingresando a Login");
+        router.push('/login');
     };
 
 

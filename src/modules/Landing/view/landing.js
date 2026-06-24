@@ -2,34 +2,40 @@
 import useLanding from "../Hooks/useLanding";
 
 export default function Landing() {
-    const {navegarAlLogin} = useLanding(); 
+    const { navegarAlLogin } = useLanding();
     return (
-        <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+        <div className="h-screen bg-gray-50 text-gray-800 font-sans">
 
-            <nav className="bg-white shadow-sm sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <nav className="w-8xl h-16 flex justify-center items-center bg-white shadow-sm sticky top-0">
+                <div className="w-7xl p-2 h-16 flex items-center justify-between">
                     <div className="text-xl font-bold text-blue-600">MiStartup</div>
-                    <div className="space-x-6 text-sm font-medium text-gray-600">
-                        <a href="#caracteristicas" className="hover:text-blue-600 transition-colors">Características</a>
-                        <button
-                            onClick={navegarAlLogin}
-                            className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
-                        >
-                            Iniciar Sesión
-                        </button>
+                    <div className="w-3xs flex gap-5 justify-center items-center">
+                        <div className=" text-sm font-medium text-gray-600">
+                            <a href="#caracteristicas" className="hover:text-blue-600 transition-colors">Características</a>
+                        </div>
+                        <div>
+                            <button
+                                onClick={navegarAlLogin}
+                                className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
+                            >
+                                Iniciar Sesión
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </nav>
 
-            <header className="max-w-6xl mx-auto px-4 py-20 text-center md:py-32">
-                <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight max-w-3xl mx-auto">
+            <header className="w-8xl h-120 flex justify-center items-center flex-col gap-8">
+
+                <h1 className="text-6xl font-extrabold text-gray-900 w-3xl flex justify-center items-center flex-col">
                     Gestiona tus proyectos <span className="text-blue-600">sin complicaciones</span>
                 </h1>
-                <p className="mt-6 text-lg md:text-xl text-gray-500 max-w-2xl mx-auto">
+                <p className="flex justify-center items-center text-lg text-gray-500 w-2xl">
                     La plataforma más simple y rápida para organizar las tareas de tu equipo. Regístrate hoy y mejora la productividad en un 200%.
                 </p>
-                <div className="mt-10 flex justify-center gap-4">
-                    <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:bg-blue-700 active:scale-95 transition-all">
+                <div className="flex justify-center gap-4">
+                    <button className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:bg-blue-700 active:scale-95 ">
                         Comenzar Gratis
                     </button>
                     <button className="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 active:scale-95 transition-all">
@@ -38,7 +44,7 @@ export default function Landing() {
                 </div>
             </header>
 
-            <section id="caracteristicas" className="bg-white py-20 border-t border-gray-100">
+            <section id="caracteristicas" className="w-8xl h-120 gap-5 bg-white border-t border-gray-100 mt-6">
                 <div className="max-w-6xl mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">¿Por qué elegirnos?</h2>
 

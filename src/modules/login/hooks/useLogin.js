@@ -5,27 +5,25 @@ import { useState } from "react";
 export function useLogin() {
     const { register, handleSubmit } = useForm();
     const router = useRouter();
-    const [inicio, setIncio] = useState(true);
+    if (localStorage.getItem("email") === null) {
+        localStorage.setItem("email", "ggmcarlosortega@gmail.com");
+        localStorage.setItem("password", "1234");
+    }
+
 
     const onSubmit = (data) => {
-        console.log("Datos capturados:", data);
-
-        router.push("/");
+        if (data.email === localStorage.getItem("email") && data.password === localStorage.getItem("password")) {
+            router.push("/dashboard");
+        }
     };
 
     const cambiarPag = () => {
-        if (inicio) {
-            console.log("Acceso valido")
-            router.push("/registro");
-        } else {
-            console.log("Acceso denegado")
-        }
+        router.push("/registro");
     };
 
     return {
         register,
         handleSubmit: handleSubmit(onSubmit),
-        cambiarPag,
-        setIncio
+        cambiarPag
     };
 }
