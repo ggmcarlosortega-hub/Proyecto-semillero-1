@@ -1,5 +1,6 @@
 "use client";
-import { useLogin } from "../hooks/useLogin";
+
+import useLogin from "../hooks/useLogin";
 
 export default function LoginForm() {
     const { register, handleSubmit, cambiarPag} = useLogin();
@@ -16,7 +17,7 @@ export default function LoginForm() {
                             type="email"
                             placeholder="tu@correo.com"
                             className="w-full rounded-lg border border-gray-300 p-2.5 text-sm outline-none focus:border-blue-500"
-                            {...register("correo")}
+                            {...register("email")}
                         />
                     </div>
                     <div>
@@ -25,7 +26,7 @@ export default function LoginForm() {
                             type="password"
                             placeholder="••••••••"
                             className="w-full rounded-lg border border-gray-300 p-2.5 text-sm outline-none focus:border-blue-500"
-                            {...register("contrasena")}
+                            {...register("password")}
                         />
                     </div>
 

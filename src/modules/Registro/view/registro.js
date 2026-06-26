@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useRegistro } from "../Hooks/useRegistro";
+import { useRegistro } from "../hooks/useRegistro";
 
 
 export default function Registro() {
-    const {register, handleSubmit, onSubmit} = useRegistro(); 
+    const { register, handleSubmit, onSubmit} = useRegistro();
+
     return (
         <div className="w-full h-screen flex flex-row justify-center items-center">
             <div className="w-[1080] h-150 flex flex-row justify-center items-center">
@@ -33,9 +34,6 @@ export default function Registro() {
                             <label className="text-[11px] relative right-24 text-gray-600"> Contraseña</label>
                             <input {...register("passwordRequerido", { required: true })} type="password" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" /> 
                         </div>
-
-                        {/* {(errors.nombreRequerido || errors.correoRequerido || errors.passwordRequerido) && <span className=" w-62 h-15 flex justify-center items-center">Todos los campos son requerido para su registro</span>} */}
-
 
                         <input type="submit" className="w-64 h-12 border-2 rounded-3xl bg-blue-700 text-white" />
                     </form>
