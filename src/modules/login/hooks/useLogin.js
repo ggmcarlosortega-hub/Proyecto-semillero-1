@@ -11,6 +11,7 @@ export default function useLogin() {
         console.log("usuarios = ",usuarios)
         const aux = usuarios.map(users => {
             return {
+                nombre: users.nombre,
                 correo: users.email,
                 clave: users.password
             }
@@ -19,8 +20,9 @@ export default function useLogin() {
         const login = aux.find(cliente =>
             cliente.correo === data.email && cliente.clave === data.password
         );
-        console.log(login)
+        console.log("Login a : " ,login)
         if (login){
+            localStorage.setItem("Login", JSON.stringify(login));
             router.push("/dashboard")
         }else{
             console.log("error")

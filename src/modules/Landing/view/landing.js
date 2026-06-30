@@ -1,5 +1,5 @@
 "use client";
-import useLanding from "../Hooks/useLanding";
+import useLanding from "../hooks/useLanding";
 
 export default function Landing() {
     const { navegarAlLogin } = useLanding();

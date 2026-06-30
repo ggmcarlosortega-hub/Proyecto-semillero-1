@@ -10,9 +10,17 @@ export default function useDashboard() {
     const cambiarVisualizar = () => {
         router.push('/dashboard/visualizar');
     }
+    const cerrarSesion = ()=>{
+        const logueado = localStorage.setItem("Login", "");
+        router.push("/login");
+        console.log("Hemos cerrado sesion... Limpiaremos el localStorage")
+    }
+    const cliente = JSON.parse(localStorage.getItem("Login"))
 
     return {
         cambiarCliente,
-        cambiarVisualizar
+        cambiarVisualizar,
+        cerrarSesion,
+        cliente
     };
 }
