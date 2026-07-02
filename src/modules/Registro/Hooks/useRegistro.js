@@ -1,6 +1,7 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 export function useRegistro() {
     const {
@@ -17,39 +18,41 @@ export function useRegistro() {
             password: data.passwordRequerido
         };
 
-        const usuarios = []
-
-        //agrege a juan
-        //agrege a carlos y elimine a juan
-        //agrege a miguel y elimine a carlos
-        usuarios.push(lista)
-
-        if (localStorage.getItem("user") === null){
-            //se agrego juan
-            localStorage.setItem("user", JSON.stringify(usuarios));
-        }else{
-            //obtenemos a juan
-            //obtenemos a carlos y juan
-            const auxiliar = JSON.parse(localStorage.getItem("user")) 
-            console.log("aux",auxiliar)
-            //carlos y juan
-            //miguel carlos y juan
-            usuarios.push(auxiliar)
-            const repararjson = usuarios.flat(Infinity)
-            //carlos y juan
-            localStorage.setItem("user", JSON.stringify(repararjson));
-            
-
-            //hay que arreglar la aninados del json
+        if (lista.nombre === "" || lista.email === "" || lista.password === "") {
+            console.log("Estas error")
+            alertError()
+            return;
         }
 
-        console.log("usuarios",usuarios)
+        const usuarios = []
+
+        usuarios.push(lista)
+
+        if (localStorage.getItem("user") === null) {
+            localStorage.setItem("user", JSON.stringify(usuarios));
+        } else {
+            const auxiliar = JSON.parse(localStorage.getItem("user"))
+            console.log("aux", auxiliar)
+            usuarios.push(auxiliar)
+            const repararjson = usuarios.flat(Infinity)
+            localStorage.setItem("user", JSON.stringify(repararjson));
+        }
+
+        console.log("usuarios", usuarios)
 
         router.push("/login");
         console.log("Lista ", lista)
     }
 
-    
+    function alertError() {
+        Swal.fire({
+            icon: "error",
+            title: "Campos Vacíos",
+            text: "Todos los campos son necesarios. Por favor intentalo de nuevo!",
+        });
+        // Swal.mixin({ toast: true }).bindClickHandler("data-swal-toast-template");
+    }
+
 
     return {
         register,
