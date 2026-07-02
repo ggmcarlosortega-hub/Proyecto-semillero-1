@@ -3,12 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2'
 
 
 export default function useCliente() {
     const router = useRouter();
     const { register, handleSubmit } = useForm();
-    const [consulta , setConsulta] = useState([]);
+    const [consulta, setConsulta] = useState([]);
 
     const info = JSON.parse(localStorage.getItem("user"));
     const dataCliente = info.map(usuario => {
@@ -30,16 +31,21 @@ export default function useCliente() {
         const Busqueda = dataCliente.find(user => user.email === data.correo);
 
         if (Busqueda) {
-            localStorage.setItem("Consulta" , JSON.stringify(Busqueda));
+            localStorage.setItem("Consulta", JSON.stringify(Busqueda));
             console.log(Busqueda);
             setConsulta(Busqueda);
             // console.log("consulta : " ,consulta)
         } else {
-            localStorage.setItem("Consulta" , "");
+            localStorage.setItem("Consulta", "");
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `No encontramos el usuario con el correo: ${data.correo}`
+            });
             console.log("No existe usuario registrado")
         }
     }
-    
+
 
     return {
         dataCliente,
