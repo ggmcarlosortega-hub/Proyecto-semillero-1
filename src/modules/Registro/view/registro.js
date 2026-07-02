@@ -22,17 +22,17 @@ export default function Registro() {
 
                         <div className="w-70 h-12 flex flex-col justify-center items-center">
                             <label className="text-[11px] relative right-26 text-gray-600">Nombre</label>
-                            <input {...register("nombreRequerido", { required: true })} type="text" placeholder="Ej: Carlos" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" />
+                            <input {...register("nombreRequerido", )} type="text" placeholder="Ej: Carlos" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" />
                         </div>
 
                         <div className="w-70 h-12 flex flex-col justify-center items-center">
                             <label className="text-[11px] relative right-27 text-gray-600">Correo</label>
-                            <input {...register("correoRequerido", { required: true })} type="email" placeholder="Ej: Carlos@semillero.edu.co" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" />
+                            <input {...register("correoRequerido", )} type="email" placeholder="Ej: Carlos@semillero.edu.co" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" />
                         </div>
 
                         <div className="w-70 h-12 flex flex-col justify-center items-center pb-2">
                             <label className="text-[11px] relative right-24 text-gray-600"> Contraseña</label>
-                            <input {...register("passwordRequerido", { required: true })} type="password" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" /> 
+                            <input {...register("passwordRequerido", )} type="password" className="w-62 h-8 border-b-2 ml-1.5 border-blue-500 outline-none" /> 
                         </div>
 
                         <input type="submit" className="w-64 h-12 border-2 rounded-3xl bg-blue-700 text-white" />
