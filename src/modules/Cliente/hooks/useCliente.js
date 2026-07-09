@@ -25,6 +25,8 @@ export default function useCliente() {
     }
     const volverMenu = () => {
         router.back();
+        // router.push("/dashboard")
+
     }
     const cliente = JSON.parse(localStorage.getItem("Login"))
     const onSubmit = (data) => {

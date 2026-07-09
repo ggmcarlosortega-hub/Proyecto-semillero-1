@@ -11,7 +11,7 @@ export default function Logueado() {
                 </button>
                 <div className=" w-20 h-15 rounded-full flex justify-center items-center bg-blue-400 shadow-2xl mr-2">
                     <button onClick={cerrarSesion} className="w-15 h-15 flex justify-center items-center cursor-pointer">
-                        {info.nombre}
+                        {info?.nombre}
                     </button>
                 </div>
             </nav>
@@ -29,13 +29,13 @@ export default function Logueado() {
                     {/* <button type="submit" className="w-40 h-10 rounded-4xl text-white text-lg bg-blue-500 cursor-pointer active:scale-90"> Ver</button> */}
                     <div>
                         <p className="w-50 h-12 flex items-center">
-                             nombre : {info.nombre}
+                             nombre : {info?.nombre}
                         </p>
                         <p className="w-50 h-12 flex justify items-center">
-                            correo : {info.correo}
+                            correo : {info?.correo}
                         </p>
                         <p className="w-50 h-12 flex  items-center">
-                            contraseña : {info.clave}
+                            contraseña : {info?.clave}
                         </p>
                     </div>
                 </div>

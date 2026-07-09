@@ -20,7 +20,7 @@ export default function Cliente() {
 
                 <button onClick={cerrarSesion} className=" w-20 h-15 flex justify-center items-center rounded-full bg-blue-400 shadow-sm mr-2">
                     <div className="w-15 h-15 flex justify-center items-center">
-                        {cliente.nombre}
+                        {cliente?.nombre}
                     </div>
                 </button>
             </nav>
@@ -39,10 +39,10 @@ export default function Cliente() {
                         <span className="w-50 h-10 flex justify-center items-center text-sm">Usuario 1</span>
                         <div>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {dataCliente[0].nombre}
+                                {dataCliente[0]?.nombre}
                             </p>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {dataCliente[0].email}
+                                {dataCliente[0]?.email}
                             </p>
                         </div>
                     </div>
@@ -51,10 +51,10 @@ export default function Cliente() {
                         {/* <button type="submit" className="w-40 h-10 rounded-4xl text-white text-lg bg-blue-500 cursor-pointer active:scale-90"> Ver</button> */}
                         <div>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {consulta.nombre}
+                                {consulta?.nombre}
                             </p>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {consulta.email}
+                                {consulta?.email}
                             </p>
                         </div>
                     </div>
@@ -63,10 +63,10 @@ export default function Cliente() {
                         {/* <button type="submit" className="w-40 h-10 rounded-4xl text-white text-lg bg-blue-500 cursor-pointer active:scale-90"> Ver</button> */}
                         <div>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {dataCliente[1].nombre}
+                                {dataCliente[1]?.nombre}
                             </p>
                             <p className="w-50 h-12 flex justify-center items-center">
-                                {dataCliente[1].email}
+                                {dataCliente[1]?.email}
                             </p>
                         </div>
                     </div>
