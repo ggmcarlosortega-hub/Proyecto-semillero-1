@@ -5,21 +5,22 @@ import useDashboard from "../hooks/useDashboard";
 export default function Dashboard() {
     const {cambiarCliente , cambiarVisualizar, cerrarSesion , cliente } = useDashboard();
     return (
+        
         <div className="h-screen bg-gray-50 text-gray-800 font-sans">
             <nav className="w-8xl h-16 flex justify-between items-center sticky shadow-sm">
                 <div className="w-30 h-16 flex justify-center items-center ml-2">
                     <span className="text-blue-500 font-bold text-2xl"> Startup</span>
                 </div>
-                <button onClick={cerrarSesion} className=" w-20 h-15 flex justify-center items-center rounded-full bg-blue-400 shadow-2xl mr-2 cursor-pointer">
-                    <div className="w-15 h-15 flex justify-center items-center">
-                        {cliente.nombre}
+                <button onClick={cerrarSesion} className=" w-15 h-15 flex justify-center items-center rounded-full bg-blue-400 shadow-2xl mr-2 cursor-pointer">
+                    <div className="w-15 h-15 text-4xl  ">
+                        {cliente?.nombre.charAt(0) || ""}
                     </div>
                 </button>
             </nav>
 
             <header className="w-8xl h-50 ">
                 <div className="w-8xl h-50 flex flex-col justify-center items-center font-bold text-2xl gap-6 text-black">
-                    Bienvenido {cliente.nombre} a Startup!
+                    Bienvenido {cliente?.nombre || ""} a Startup!
                     <span className="text-lg text-gray-600">A continuacion tendras disponibilidad a los modulos funcionales de la pagina web usando <span className="text-blue-500">LocalStorage</span></span>
                 </div>
             </header>
