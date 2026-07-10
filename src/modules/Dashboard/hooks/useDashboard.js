@@ -1,11 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 export default function useDashboard() {
     const router = useRouter();
     const cliente = JSON.parse(localStorage.getItem("Login"))
-    const [isLogin , setIsLogin] = useState();
 
     useEffect(() => {
         const userLogeado = localStorage.getItem("Login");
@@ -20,14 +19,7 @@ export default function useDashboard() {
                 backdrop: "#ffffff", 
             })
         }else{
-            Swal.fire({
-                icon : "success",
-                title : "Acceso otorgado",
-                text : "Se bienvenido " + cliente.nombre + " nuevamente",
-                timer : 2000,
-                showConfirmButton : false
-                
-            })
+            console.log("acceso otorgado")
         }
 
     }, [router])

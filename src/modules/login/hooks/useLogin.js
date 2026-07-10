@@ -29,19 +29,25 @@ export default function useLogin() {
         if (login) {
             localStorage.setItem("Login", JSON.stringify(login));
             Swal.fire({
-                title: "Sesion Exitosa",
-                icon: "success",
-                timer: 2000
+                icon : "success",
+                title : "Acceso otorgado",
+                text : "Se bienvenido " + login.nombre + " nuevamente",
+                timer : 2000,
+                showConfirmButton : false
             });
-
             router.push("/dashboard")
         } else {
-            console.log("error")
+            Swal.fire({
+                icon: "error",
+                title: "Sesion Denegada",
+                text: "Correo o contraseña incorrecta",
+                timer: 2000
+            });
         }
     };
 
     const cambiarPag = () => {
-        router.push("/registro?id=1");
+        router.push("/registro");
     };
 
     return {
